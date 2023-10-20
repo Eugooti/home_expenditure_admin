@@ -1,0 +1,29 @@
+/* CalenderScheduler.css */
+
+/* Container styles */
+.calendar-container {
+    height: 100%;
+    font-size: 18px;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Add Event button styles */
+.add-event-button {
+    color: white;
+    border-radius: 15px;
+    width: 150px;
+}
+
+/* Calendar styles */
+.calendar {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
