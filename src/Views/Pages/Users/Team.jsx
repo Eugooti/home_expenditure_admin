@@ -1,9 +1,13 @@
 import {useForm} from "antd/es/form/Form.js";
-import {Form, Input, message, Select} from "antd";
+import {Button, Form, Input, message, Select, Space} from "antd";
 import Header from "../../../Components/Header/Header.jsx";
 import axios from "axios";
+import {MinusCircleOutlined, PlusOutlined, PoweroffOutlined} from "@ant-design/icons";
+import {useState} from "react";
 
 const Team = () => {
+
+
 
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -32,13 +36,11 @@ const Team = () => {
 
     const onFormFinish = async (values) => {
 
-        // console.log(values)
         const firstName=values.firstName;
         const lastName=values.lastName;
         const emailAddress=values.email;
         const phoneNumber=values.phone;
         const access=values.role;
-        // console.log(`${firstName} ${lastName} ${emailAddress} ${phoneNumber} ${access}`);
 
         try {
             const response=await axios.post('http://localhost:5000/api/user',{firstName,lastName, emailAddress, phoneNumber, access});
@@ -117,6 +119,45 @@ const Team = () => {
                             ))}
                         </Select>
                     </Form.Item>
+
+                    <Form.List name="users">
+                        {(fields, { add, remove }) => (
+                            <>
+                                {fields.map(({ key, name, ...restField }) => (
+                                    <Space
+                                        key={key}
+                                        style={{
+                                            display: 'flex',
+                                            marginBottom: 8,
+                                        }}
+                                        align="baseline"
+
+                                    >
+                                        <Form.Item
+                                            {...restField}
+                                            // label={"Allowance"}
+                                            name={[name, 'Allowance']}
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    message: 'Required field',
+                                                },
+                                            ]}
+                                        >
+                                            <Input  size={"large"} />
+                                        </Form.Item>
+
+                                        <MinusCircleOutlined onClick={() => remove(name)} />
+                                    </Space>
+                                ))}
+                                <Form.Item>
+                                    <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+                                        Add Allowance
+                                    </Button>
+                                </Form.Item>
+                            </>
+                        )}
+                    </Form.List>
 
                     <Form.Item className={'flex justify-center'}>
                         <button className={'bg-gray-800 text-white text-lg hover:bg-gray-900 h-10 w-56 rounded-2xl '} type="submit">

@@ -5,7 +5,7 @@ import Button from "antd/es/button/index.js";
 import {useContext, useEffect, useState} from "react";
 import NewToDo from "./NewToDo.jsx";
 import {useQuery} from "@apollo/client";
-import {GET_TODOS_BY_USER} from "../../../../API/Queries/Queries.js";
+import {GET_TODOS_BY_USER} from "../../../../API/GraphQL/Queries/Queries.js";
 import {UserContext} from "../../../../Context/User Context/UserContext.jsx";
 
 const ToDo = () => {

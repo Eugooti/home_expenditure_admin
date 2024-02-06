@@ -4,7 +4,7 @@ import {Form, Input, InputNumber, message, Popconfirm, Select, Table, Typography
 import {DeleteFilled, EditOutlined} from '@ant-design/icons';
 import axios from 'axios';
 import {UserContext} from "../../../Context/User Context/UserContext.jsx";
-import {GET_CATEGORIES_BY_USER, GET_EXPENDITURES_BY_USER} from "../../../API/Queries/Queries.js";
+import {GET_CATEGORIES_BY_USER, GET_EXPENDITURES_BY_USER} from "../../../API/GraphQL/Queries/Queries.js";
 import {useQuery} from "@apollo/client";
 
 
@@ -41,9 +41,6 @@ const Expenditures = () => {
         // Handle error
     }
 
-
-    // const [data, setData] = useState();
-    // const [Categories, setCategories] = useState();
 
     const { loading: categoriesLoading, error: categoriesError, data: categoriesData } = useQuery(GET_CATEGORIES_BY_USER, {
         variables: { emailAddress: User?.emailAddress },

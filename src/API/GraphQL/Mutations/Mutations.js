@@ -68,13 +68,7 @@ export const DELETE_EXPENDITURE = gql`
 
 export const CREATE_CATEGORY = gql`
   mutation CreateCategory($name: String!, $description: String!, $maximumCash: Int!, $createdBy: String!) {
-    createCategory(name: $name, description: $description, maximumCash: $maximumCash, createdBy: $createdBy) {
-      id
-      name
-      description
-      maximumCash
-      createdBy
-    }
+    createCategory(name: $name, description: $description, maximumCash: $maximumCash, createdBy: $createdBy)
   }
 `;
 

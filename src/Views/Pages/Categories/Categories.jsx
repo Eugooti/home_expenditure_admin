@@ -2,7 +2,7 @@ import {Form, Input, InputNumber, message, Popconfirm, Select, Table, Typography
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {useQuery} from "@apollo/client";
-import {GET_CATEGORIES_BY_USER} from "../../../API/Queries/Queries.js";
+import {GET_CATEGORIES_BY_USER} from "../../../API/GraphQL/Queries/Queries.js";
 import {UserContext} from "../../../Context/User Context/UserContext.jsx";
 import {DeleteFilled, EditOutlined} from "@ant-design/icons";
 // import {useMutation} from "@apollo/client";
@@ -96,6 +96,7 @@ const Categories = () => {
     }, [data]);
 
 
+    console.log(Data)
 
     const [form] = Form.useForm();
     const [editingKey, setEditingKey] = useState('');

@@ -5,7 +5,7 @@ import TextArea from "antd/es/input/TextArea.js";
 import { useContext } from "react";
 import { UserContext } from "../../../Context/User Context/UserContext.jsx";
 import { useMutation } from "@apollo/client";
-import { CREATE_CATEGORY } from "../../../API/Mutations/Mutations.js";
+import { CREATE_CATEGORY } from "../../../API/GraphQL/Mutations/Mutations.js";
 
 const NewCategory = () => {
     const User = useContext(UserContext);
@@ -35,12 +35,23 @@ const NewCategory = () => {
                 },
             });
 
-            if (response.data.createCategory) {
+
+            if (response.data.createCategory==="Category created successfully") {
                 messageApi.open({
                     type: "success",
-                    content: "Category created successfully",
+                    content: response.data?.createCategory,
                 }).then(() => onFormClearClick());
             }
+
+            else if (response.data.createCategory!=="Category created successfully"){
+                messageApi.open({
+                    type: "error",
+                    content: response.data?.createCategory,
+                });
+            }
+
+
+
         } catch (error) {
             console.error(error);
             messageApi.open({

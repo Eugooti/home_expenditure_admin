@@ -4,9 +4,9 @@ import {useForm} from "antd/es/form/Form.js";
 import TextArea from "antd/es/input/TextArea.js";
 import {UserContext} from "../../../Context/User Context/UserContext.jsx";
 import {useContext} from "react";
-import {CREATE_EXPENDITURE} from "../../../API/Mutations/Mutations.js";
+import {CREATE_EXPENDITURE} from "../../../API/GraphQL/Mutations/Mutations.js";
 import {useMutation, useQuery} from "@apollo/client";
-import {GET_CATEGORIES_BY_USER} from "../../../API/Queries/Queries.js";
+import {GET_CATEGORIES_BY_USER} from "../../../API/GraphQL/Queries/Queries.js";
 
 const NewExpenditure = () => {
 

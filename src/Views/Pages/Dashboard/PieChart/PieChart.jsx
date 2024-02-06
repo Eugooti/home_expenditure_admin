@@ -4,7 +4,7 @@ import Text from "antd/es/typography/Text.js";
 import {useQuery} from "@apollo/client";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "../../../../Context/User Context/UserContext.jsx";
-import {GET_CATEGORIES_BY_USER, GET_EXPENDITURES_BY_USER} from "../../../../API/Queries/Queries.js";
+import {GET_CATEGORIES_BY_USER, GET_EXPENDITURES_BY_USER} from "../../../../API/GraphQL/Queries/Queries.js";
 import {Spin} from "antd";
 import {LoadingOutlined} from "@ant-design/icons";
 

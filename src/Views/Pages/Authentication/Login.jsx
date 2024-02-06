@@ -4,8 +4,7 @@ import {Card, Form, Input, message} from "antd";
 import {UnlockOutlined, UserOutlined} from "@ant-design/icons";
 import axios from "axios";
 import {setLocalStorage} from "../../../Utils/LocalStorage/localStorage.jsx";
-// import {error, success} from "../../../Components/Message/Message.js";
-
+import {GET_CATEGORIES,GET_EXPENDITURE} from "../../../API/RESTAPI/Requests.js";
 
 const Login = () => {
 
@@ -64,6 +63,12 @@ const Login = () => {
         console.log(errorInfo)
         // todo handle form finish fail
     };
+
+    const data=GET_CATEGORIES()
+    const data2=GET_EXPENDITURE()
+
+    console.log(data)
+    console.log(data2)
 
 
     return (

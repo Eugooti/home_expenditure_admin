@@ -6,7 +6,7 @@ import { Form, Input, message} from "antd";
 import TextArea from "antd/es/input/TextArea.js";
 import {UserContext} from "../../../../Context/User Context/UserContext.jsx";
 import DatePickerWrapper from "../../../../Config/DatePicker/DatePickerConfig.jsx";
-import {CREATE_TODO} from "../../../../API/Mutations/Mutations.js";
+import {CREATE_TODO} from "../../../../API/GraphQL/Mutations/Mutations.js";
 import {useMutation} from "@apollo/client";
 
 // eslint-disable-next-line react/prop-types
